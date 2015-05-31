@@ -9,9 +9,15 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "web_accessible_resources": [
+    "icons/icon16.png",
+    "icons/icon48.png",
+    "icons/icon128.png"
+  ],
   "default_locale": "en",
   "background": {
     "scripts": [
+      "data/streams.js",
       "src/bg/background.js"
     ],
     "persistent": true
@@ -25,6 +31,8 @@
   "permissions": [
     "notifications",
     "<all_urls>",
-    "tabs"
+    "tabs",
+    "alarms",
+    "notifications"
   ]
 }

@@ -1,7 +1,15 @@
 $(document).on('ready', function(){
-	
+
 	var oStreamManager = new Stream();
 	oStreamManager.initGeneralSettings(jsonstreams);
+	oStreamManager.getStreamStatus(jsonstreams, true, true);
+	chrome.alarms.create('checkStreams', {delayInMinutes: 0.1, periodInMinutes: 0.2} );
+	chrome.alarms.onAlarm.addListener(function(alarm) {
+		if(alarm.name == 'checkStreams')
+		{
+			oStreamManager.getStreamStatus(jsonstreams, true, true);
+		}
+	});
 
 	//button click
 	$('.slidePage').on('click', function(){
@@ -33,8 +41,6 @@ $(document).on('ready', function(){
 		//Hide the back button
 		$('.back-button').hide();
 	});
-
-	oStreamManager.getStreamStatus(jsonstreams);
 
 	$('.newTab').on('click', function(){
 		var newURL = $(this).attr('href');

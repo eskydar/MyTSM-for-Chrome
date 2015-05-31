@@ -6,7 +6,8 @@ var jsonstreams =
       "Santorin": "TSM_Santorin",
       "Bjergsen": "TSM_Bjergsen",
       "WildTurtle": "TSM_WildTurtle",
-      "Lustboy": "TSM_Lustboy"
+      "Lustboy": "TSM_Lustboy",
+      "Eskydar": "Eskydar"
     }
   }
 };
