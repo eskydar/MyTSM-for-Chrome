@@ -1,4 +1,8 @@
 $(document).on('ready', function(){
+	
+	var oStreamManager = new Stream();
+	oStreamManager.initGeneralSettings(jsonstreams);
+
 	//button click
 	$('.slidePage').on('click', function(){
 		//put the target page in target variable
@@ -30,21 +34,7 @@ $(document).on('ready', function(){
 		$('.back-button').hide();
 	});
 
-
-	var streams = ['tsm_dyrus', 'TSM_Santorin', 'TSM_Bjergsen', 'TSM_WildTurtle', 'TSM_Lustboy'];
-
-	$.each( streams, function( key, value ) {
-		$.getJSON( 'https://api.twitch.tv/kraken/streams/'+value, function( data ){
-			if(data.stream == null)
-			{
-				$('#'+value).addClass('offline');
-			}
-			else
-			{
-				$('#'+value).addClass('online');
-			}
-		});
-	});
+	oStreamManager.getStreamStatus(jsonstreams);
 
 	$('.newTab').on('click', function(){
 		var newURL = $(this).attr('href');
