@@ -27,7 +27,15 @@ body{
 /* Scroll Bar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); }
-::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:window-inactive  { background: red; }
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:window-inactive  { background: #262626; }
+
+.colorWin{
+	color: #07E642;
+}
+
+.colorLoss{
+	color: red;
+}
 
 header{
 	background: #262626;
@@ -35,7 +43,7 @@ header{
 	text-align: center;
 }
 
-header > span.back-button{
+header > a.back-button{
 	color: #ffffff;
 	position: absolute;
   left: 6px;
@@ -55,20 +63,20 @@ section.slide{
 	background: white;
 }
 
-section.content > div.navigation-buttons > ul{
+section > div.navigation-buttons > ul{
 	text-align: center;
 	margin-bottom: 0px;
 }
 
-section.content > div.navigation-buttons > ul > li{
+section > div.navigation-buttons > ul > li{
 	border-top: 1px solid #eeeeee;
 }
 
-section.content > div.navigation-buttons > ul > li:first-child{
+section > div.navigation-buttons > ul > li:first-child{
 	border-top: none;
 }
 
-section.content > div.navigation-buttons > ul > li.list-button > a{
+section > div.navigation-buttons > ul > li.list-button > a{
 	color: #000000;
 	display: block;
 	line-height: 58px;
@@ -103,4 +111,25 @@ section.stream > div.stream-list > ul > li > div.row > div.status > span.online{
 
 section.stream > div.stream-list > ul > li > div.row > div.status > span.offline{
 	color: red;
+}
+
+section.reddit > div.reddit-list > ul > li{
+	padding: 12px;
+  text-align: center;
+  border-top: 1px solid #eeeeee;
+}
+
+section.reddit > div.reddit-list > ul > li:first-child{
+  border-top: none;
+}
+
+section.standings > div.standings-list > ul > li{
+	padding: 12px;
+  text-align: center;
+  border-top: 1px solid #eeeeee;
+  font-size: 12px;
+}
+
+section.standings > div.standings-list > ul > li:first-child{
+  border-top: none;
 }

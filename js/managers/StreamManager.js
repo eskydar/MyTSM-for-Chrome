@@ -4,10 +4,13 @@
 function Stream(){
 }
 
-Stream.prototype.initGeneralSettings = function(streamListJson){
-  $.each( streamListJson.lol.streams, function( key, value ) {
+var background = chrome.extension.getBackgroundPage(); //do this in global scope for popup.js
+background.transfer;
 
-    $('.stream-list ul').append('\
+Stream.prototype.initGeneralSettings = function(streamListJson, game){
+  $.each( streamListJson[game].streams, function( key, value ) {
+
+    $('.stream-list#'+game+' ul').append('\
       <li>\
         <div class="row">\
           <div class="col-xs-8 player">\
@@ -17,14 +20,13 @@ Stream.prototype.initGeneralSettings = function(streamListJson){
             <span class="glyphicon glyphicon-dot" id="'+ value +'" aria-hidden="true"></span>\
           </div>\
         </div>\
-      </li>')
-
+      </li>');
   });
 };
 
-Stream.prototype.getStreamStatus = function(streamListJson, status, notifications){
+Stream.prototype.getStreamStatus = function(streamListJson, status, notifications, prefix, game){
   
-  $.each( streamListJson.lol.streams, function( key, value ) {
+  $.each( streamListJson[game].streams, function( key, value ) {
     $.getJSON( 'https://api.twitch.tv/kraken/streams/'+value, function( data ){
       if(status)
       {
@@ -37,26 +39,40 @@ Stream.prototype.getStreamStatus = function(streamListJson, status, notification
           $('#'+value).css('color', 'green');
         }
       }
-      if(data.stream != null)
+      if(notifications)
       {
-        if(notifications)
+        if(data.stream != null)
         {
-          var oStreamManager = new Stream();
-          oStreamManager.showNotification(key, value);
-          console.log('jaja');
+          if(background[key] == "offline")
+          {
+            
+            var oStreamManager = new Stream();
+            oStreamManager.showNotification(key, value, prefix);
+            background[key] = "online";
+          }
+        }
+        else
+        {
+          background[key] = "offline";
         }
       }
-    });
 
+    });
+    console.log(background[key]);
   });
 
-  Stream.prototype.showNotification = function(player, url){
-    chrome.notifications.create('streamOnline'+player, {
+  Stream.prototype.showNotification = function(player, url, prefix){
+    var icon = 'icon128.png';
+    if(prefix)
+    {
+      icon = 'icons/icon128.png';
+    }
+    var stamp = new Date().getTime();
+    chrome.notifications.create('streamOnline'+player+stamp, {
     type: 'basic',
-    iconUrl: 'icon128.png',
+    iconUrl: icon,
     title: 'TSM streamer online',
     message: player+' has just started streaming!'
     }, function(notificationId) {});
   }
-
 };
