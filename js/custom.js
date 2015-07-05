@@ -45,24 +45,24 @@ $(document).on('ready', function(){
   oStreamManager.initGeneralSettings(jsonstreams, 'smite');
   oStreamManager.initGeneralSettings(jsonstreams, 'smash');
 	oStreamManager.initGeneralSettings(jsonstreams, 'other');
-  oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'lol');
-  oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'cs');
-  oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'hs');
-  oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'smite');
-  oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'smash');
-	oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'other');
+  oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'lol');
+  oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'cs');
+  oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'hs');
+  oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'smite');
+  oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'smash');
+	oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'other');
 	//Create Alarm
 	chrome.alarms.create('checkStreams', {delayInMinutes: 0.1, periodInMinutes: 0.2} );
 	//Create Listener for previously created alarm
 	chrome.alarms.onAlarm.addListener(function(alarm) {
 		if(alarm.name == 'checkStreams')
 		{
-      oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'lol');
-      oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'cs');
-      oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'hs');
-      oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'smite');
-      oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'smash');
-			oStreamManager.getStreamStatus(jsonstreams, true, true, false, 'other');
+      oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'lol');
+      oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'cs');
+      oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'hs');
+      oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'smite');
+      oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'smash');
+			oStreamManager.getStreamStatus(jsonstreams, true, false, false, 'other');
 		}
 	});
 

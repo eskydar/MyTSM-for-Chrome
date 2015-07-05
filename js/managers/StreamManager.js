@@ -62,10 +62,10 @@ Stream.prototype.getStreamStatus = function(streamListJson, status, notification
   });
 
   Stream.prototype.showNotification = function(player, url, prefix){
-    var icon = 'icon128.png';
+    var icon = '../icons/icon128.png';
     if(prefix)
     {
-      icon = 'icons/icon128.png';
+      icon = '../icons/icon128.png';
     }
     var stamp = new Date().getTime();
     chrome.notifications.create('streamOnline'+player+stamp, {
