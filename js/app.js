@@ -1,4 +1,4 @@
-var app = angular.module('MyTSM', ['ui.router']);
+var app = angular.module('MyTSM', ['ui.router', 'ngAnimate']);
 
 app.factory('streamStatusManager', streamStatusManager);
 
