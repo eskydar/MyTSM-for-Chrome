@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="MyTSM">
+	<head>
+	  <meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="eskydar">
+		
+		<title>Team Solo Mid</title>
+
+		<link href="/vendor/animate-css/animate.min.css" rel="stylesheet" media="screen">
+        <link href="/css/style.css" rel="stylesheet" media="screen">
+
+        <base href="/src/">
+	</head>
+	
+	<body>
+		<header>
+			<img src="../img/logo-with-text.png" />
+		</header>
+
+        <div class="ui-view-container">
+            <div ui-view></div>
+        </div>
+
+        <script src="/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+		<script src="/data/streams.js"></script>
+		<script src="/js/streamStatusManager.js"></script>
+		<script src="/js/app.js"></script>
+	</body>
+</html>
