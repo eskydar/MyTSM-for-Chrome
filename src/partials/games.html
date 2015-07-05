@@ -1,0 +1,19 @@
+<section class="slide main active" id="main">
+    <ul>
+        <li ng-repeat="game in games">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <a ui-sref="game({ gameKey: game.gameKey })">{{ game.gameTitle }}</a>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <a href="./teams/other">General</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
