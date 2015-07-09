@@ -1,7 +1,7 @@
 {
   "name": "My Team Solo Mid",
   "short_name": "MyTSM",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Team Solo Mid Chrome extension, with this extension you will always be up-to-date on the latest TSM news!",
   "homepage_url": "http://www.tsm.gg",

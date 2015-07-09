@@ -8,12 +8,28 @@ body, section {
     /* Change width and height to own preferences */
     overflow-x: hidden;
     position: relative;
+    margin: 0;
 }
 
 body {
     border: 2px solid #262626;
-    width: 254px;
-    min-height: 242px;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #262626;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover {
+    background: #262626;
+    color: white;
 }
 
 /* Basic style tweaks */
@@ -26,16 +42,11 @@ body {
     display: none;
 }
 
-ul {
-    list-style: none;
-}
-
-.online {
-    color: green;
-}
-
-.offline {
-    color: red;
+.status {
+    float: right;
+    right: 60px;
+    position: absolute;
+    margin-top: 1px;
 }
 
 .ng-hide {
@@ -65,108 +76,54 @@ ul {
 
 header {
     background: #262626;
-    height: 60px;
+    height: 70px;
     text-align: center;
+    border-bottom: 6px solid #CCCCCC;
 }
 
 a.back-button {
     color: #ffffff;
     position: absolute;
-    left: 6px;
-    top: -39px;
+    left: 14px;
+    top: -50px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 18px;
     display: block;
-    background: red;
+    background: url('chrome-extension://__MSG_@@extension_id__/img/backbutton.png');
 }
 
 header > img {
     height: 30px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-section.slide {
-    width: 250px;
-    height: 178px;
-    background: white;
-}
-
-section > div.navigation-buttons > ul {
-    text-align: center;
-    margin-bottom: 0px;
-}
-
-section > div.navigation-buttons > ul > li {
-    border-top: 1px solid #eeeeee;
-}
-
-section > div.navigation-buttons > ul > li:first-child {
-    border-top: none;
-}
-
-section > div.navigation-buttons > ul > li.list-button > a {
-    color: #000000;
-    display: block;
-    line-height: 58px;
-}
-
-section.stream > div.stream-list > ul {
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-section.stream > div.stream-list > ul > li {
-    border-top: 1px solid #eeeeee;
-}
-
-section.stream > div.stream-list > ul > li:first-child {
-    border-top: none;
-}
-
-section.stream > div.stream-list > ul > li > div.row {
+ul {
+    list-style: none;
     margin: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0;
 }
 
-section.stream > div.stream-list > ul > li > div.row > div.player {
-    padding-left: 35px;
+ul > li {
+    border-bottom: 1px solid #efefef;
 }
 
-section.stream > div.stream-list > ul > li > div.row > div.status > span.online {
-    color: green;
+ul > li:last-child{
+    border-bottom: none;
 }
 
-section.stream > div.stream-list > ul > li > div.row > div.status > span.offline {
-    color: red;
-}
-
-section.reddit > div.reddit-list > ul > li {
-    padding: 12px;
+ul.games-list > li, ul.game-list > li, ul.stream-list > li {
     text-align: center;
-    border-top: 1px solid #eeeeee;
 }
 
-section.reddit > div.reddit-list > ul > li:first-child {
-    border-top: none;
-}
-
-section.standings > div.standings-list > ul > li {
-    padding: 12px;
-    text-align: center;
-    border-top: 1px solid #eeeeee;
-    font-size: 12px;
-}
-
-section.standings > div.standings-list > ul > li:first-child {
-    border-top: none;
+ul.games-list > li > a,  ul.game-list > li > a, ul.stream-list > li > a {
+    padding: 12px 0px;
+    display: block;
 }
 
 /* Animations */
 .ui-view-container {
     position: relative;
-    height: 65px;
 }
 
 [ui-view].ng-enter, [ui-view].ng-leave {

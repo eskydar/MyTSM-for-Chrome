@@ -1,13 +1,13 @@
 <a ui-sref="game({ gameKey: game.gameKey })" class="glyphicon glyphicon-chevron-left pull-left back-button"></a>
 
-<section class="slide stream" id="streams">
-    <div class="stream-list">
-        <ul>
-            <li ng-repeat="(key, value) in game.streams">
-                <span class="online" ng-show="streamStatusManager.getStatus(key)">online</span>
-                <span class="offline" ng-hide="streamStatusManager.getStatus(key)">offline</span>
-                <a target="_blank" href="http://www.twitch.tv/{{ value }}">{{ key }}</a>
-            </li>
-        </ul>
-    </div>
+<section>
+    <ul class="stream-list">
+        <li ng-repeat="(key, value) in game.streams">
+            <a target="_blank" href="http://www.twitch.tv/{{ value }}">
+            	{{ key }}
+            	<span class="status" ng-show="streamStatusManager.getStatus(key)"><img src="../../img/online-icon.png" /></span>
+            	<span class="status" ng-hide="streamStatusManager.getStatus(key)"><img src="../../img/offline-icon.png" /></span>
+            </a>
+        </li>
+    </ul>
 </section>

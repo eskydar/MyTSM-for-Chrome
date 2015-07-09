@@ -1,14 +1,12 @@
-<a ui-sref="games" class="glyphicon glyphicon-chevron-left pull-left back-button"></a>
+<a ui-sref="games" class="glyphicon glyphicon-chevron-left pull-left back-button">&#60;</a>
 
-<section class="slide teams" id="teams">
-    <div class="navigation-buttons">
-        <ul>
-            <li class="list-button">
-                <a ui-sref="streams({ gameKey: game.gameKey })">Streams</a>
-            </li>
-            <li class="list-button">
-                <a href="#">Standings</a>
-            </li>
-        </ul>
-    </div>
+<section>
+    <ul class="games-list">
+        <li>
+            <a ui-sref="streams({ gameKey: game.gameKey })">Streams</a>
+        </li>
+        <li ng-repeat="(key, value) in game.links">
+            <a ui-sref="page({ gameKey: game.gameKey, pageKey: value })">{{ value }}</a>
+        </li>
+    </ul>
 </section>

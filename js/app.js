@@ -29,6 +29,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             $scope.streamStatusManager = streamStatusManager;
         }
     });
+
+    $stateProvider.state('page', {
+        url: '/page/:gameKey/:pageKey',
+        templateUrl: 'partials/page.html',
+        controller: function ($stateParams, $scope) {
+            $scope.game = Games[$stateParams.gameKey];
+            $scope.page = $stateParams.pageKey;
+        }
+    });
 });
 
 app.run(function($interval, streamStatusManager) {
@@ -36,5 +45,6 @@ app.run(function($interval, streamStatusManager) {
 
     $interval(function () {
         streamStatusManager.refreshStatus();
-    }, 1000 * 60); // every 60 sec
+        console.log('test');
+    }, 1000 * 40); // every 60 sec
 });
