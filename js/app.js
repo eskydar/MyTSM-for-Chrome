@@ -1,6 +1,7 @@
 var app = angular.module('MyTSM', ['ui.router', 'ngAnimate']);
 
 app.factory('streamStatusManager', streamStatusManager);
+//app.factory('redditManager', redditManager);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/games');
@@ -37,6 +38,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             $scope.game = Games[$stateParams.gameKey];
             $scope.page = $stateParams.pageKey;
         }
+    });
+
+    $stateProvider.state('reddit', {
+        url: '/reddit',
+        templateUrl: 'partials/reddit.html',
+        controller: 'redditController',
     });
 });
 

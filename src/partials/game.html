@@ -8,5 +8,8 @@
         <li ng-repeat="(key, value) in game.links">
             <a ui-sref="page({ gameKey: game.gameKey, pageKey: value })">{{ value }}</a>
         </li>
+        <li>
+        	<a ui-sref="reddit">Reddit</a>
+        </li>
     </ul>
 </section>
