@@ -104,6 +104,10 @@ ul {
     padding: 0;
 }
 
+ul.reddit-list{
+    height: 244px;
+}
+
 ul > li {
     border-bottom: 1px solid #efefef;
 }
@@ -112,11 +116,11 @@ ul > li:last-child{
     border-bottom: none;
 }
 
-ul.games-list > li, ul.game-list > li, ul.stream-list > li {
+ul.games-list > li, ul.game-list > li, ul.stream-list > li, ul.reddit-list > li {
     text-align: center;
 }
 
-ul.games-list > li > a,  ul.game-list > li > a, ul.stream-list > li > a {
+ul.games-list > li > a,  ul.game-list > li > a, ul.stream-list > li > a, ul.reddit-list > li > a {
     padding: 12px 0px;
     display: block;
 }

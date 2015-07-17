@@ -9,9 +9,9 @@ app.controller('redditController', ['$scope', '$http', function($scope, $http) {
 	    	$(data).find('item').each(function(k, v) {
 	    		//console.log(k, $(v).find('title').html());
 	    		var post = {
-	    			title: [$(v).find('title').html()],
-	    			content: [$(v).find('description').html()],
-	    			link: [$(v).find('guid').html()],
+	    			title: $(v).find('title').html(),
+	    			content: $(v).find('description').html(),
+	    			link: $(v).find('guid').html(),
 	    		}
 	    		redditPosts.push(post);
 	    	});

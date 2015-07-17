@@ -1,10 +1,10 @@
 <a ui-sref="game({ gameKey: game.gameKey })" class="glyphicon glyphicon-chevron-left pull-left back-button"></a>
 
 <section>
-    <ul class="stream-list">
-        <li ng-repeat="(key, value) in game.streams">
-            <a target="_blank" href="http://www.twitch.tv/{{ value }}">
-            	{{ key }}
+    <ul class="reddit-list">
+        <li ng-repeat="(key, value) in posts">
+            <a target="_blank" href="{{ value.link }}">
+            	{{ value.title }}
             </a>
         </li>
     </ul>
