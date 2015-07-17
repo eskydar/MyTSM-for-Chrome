@@ -19,6 +19,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: 'partials/game.html',
         controller: function ($stateParams, $scope) {
             $scope.game = Games[$stateParams.gameKey];
+            $scope.pages = Games[$stateParams.gameKey]['pages'];
         }
     });
 
@@ -31,14 +32,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     });
 
-    $stateProvider.state('page', {
-        url: '/page/:gameKey/:pageKey',
-        templateUrl: 'partials/page.html',
-        controller: function ($stateParams, $scope) {
-            $scope.game = Games[$stateParams.gameKey];
-            $scope.page = $stateParams.pageKey;
-        }
-    });
+    // $stateProvider.state('page', {
+    //     url: '/page/:gameKey/:pageKey',
+    //     templateUrl: 'partials/page.html',
+    //     controller: function ($stateParams, $scope) {
+    //         $scope.game = Games[$stateParams.gameKey];
+    //         $scope.page = $stateParams.pageKey;
+    //     }
+    // });
 
     $stateProvider.state('reddit', {
         url: '/reddit',

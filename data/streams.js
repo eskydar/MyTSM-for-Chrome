@@ -56,6 +56,12 @@ var Games =
             'TheOddOne': 'tsm_theoddone',
             'Locodoco': 'locodoco',
             'Reginald': 'tsm_reginald'
+        },
+        'pages': {
+            'reddit': {
+                'pageTitle': 'Reddit',
+                'pageHref': 'reddit'
+            }
         }
     }
 };

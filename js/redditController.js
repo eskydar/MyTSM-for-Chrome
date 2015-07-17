@@ -1,5 +1,3 @@
-var app = angular.module('MyTSM');
-
 app.controller('redditController', ['$scope', '$http', function($scope, $http) {
 
 	var redditPosts = [];
