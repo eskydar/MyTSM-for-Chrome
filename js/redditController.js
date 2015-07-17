@@ -1,4 +1,4 @@
-app.controller('redditController', ['$scope', '$http', function($scope, $http) {
+app.controller('redditController', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
 
 	var redditPosts = [];
 
@@ -15,6 +15,7 @@ app.controller('redditController', ['$scope', '$http', function($scope, $http) {
 	    	});
 	    //console.log($(data).find('guid'));
 	    $scope.posts = redditPosts;
+	    $scope.game = Games[$stateParams.gameKey];
 
 	    }).
 	    error(function(data, status, headers, config) {

@@ -62,6 +62,9 @@ var Games =
                 'pageTitle': 'Reddit',
                 'pageHref': 'reddit'
             }
+        },
+        'links': {
+            'TSMLive': 'http://www.twitch.tv/tsmlive'
         }
     }
 };

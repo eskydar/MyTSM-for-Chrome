@@ -5,11 +5,11 @@
         <li>
             <a ui-sref="streams({ gameKey: game.gameKey })">Streams</a>
         </li>
-        <li ng-repeat="(key, value) in game.links">
-            <a ui-sref="page({ gameKey: game.gameKey, pageKey: value })">{{ value }}</a>
-        </li>
         <li ng-repeat="(key, value) in pages">
-        	<a ui-sref="{{value.pageHref}}">{{value.pageTitle}}</a>
+        	<a ui-sref="{{value.pageHref}}({ gameKey: game.gameKey })">{{value.pageTitle}}</a>
+        </li>
+        <li ng-repeat="(key, value) in links">
+            <a target="_blank" href="{{ value }}">{{ key }}</a>
         </li>
     </ul>
 </section>

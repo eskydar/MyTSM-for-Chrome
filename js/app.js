@@ -20,6 +20,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: function ($stateParams, $scope) {
             $scope.game = Games[$stateParams.gameKey];
             $scope.pages = Games[$stateParams.gameKey]['pages'];
+            $scope.links = Games[$stateParams.gameKey]['links'];
         }
     });
 
@@ -42,7 +43,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     // });
 
     $stateProvider.state('reddit', {
-        url: '/reddit',
+        url: '/:gameKey/reddit',
         templateUrl: 'partials/reddit.html',
         controller: 'redditController',
     });
