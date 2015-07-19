@@ -14,7 +14,7 @@ var Games =
     },
     'cs': {
         'gameKey': 'cs',
-        'gameTitle': 'Counterstrike',
+        'gameTitle': 'Counter-Strike: Global Offensive',
         'streams': {
             'Xyp9x': 'Xyp9x',
             'cajunb': 'Cajunb',
@@ -25,7 +25,7 @@ var Games =
     },
     'hs': {
         'gameKey': 'hs',
-        'gameTitle': 'Hearthstone',
+        'gameTitle': 'Hearthstone: Heroes of Warcraft',
         'streams': {
             'Trump': 'TrumpSC',
             'Kripparrian': 'nl_Kripp'
@@ -44,14 +44,14 @@ var Games =
     },
     'smash': {
         'gameKey': 'smash',
-        'gameTitle': 'Super Smash Brothers',
+        'gameTitle': 'Super Smash Bros.',
         'streams': {
             'Leffen': 'lffn'
         }
     },
     'other': {
         'gameKey': 'other',
-        'gameTitle': 'General',
+        'gameTitle': 'Team SoloMid',
         'streams': {
             'TheOddOne': 'tsm_theoddone',
             'Locodoco': 'locodoco',
