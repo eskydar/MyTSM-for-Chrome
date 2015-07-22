@@ -8,20 +8,20 @@ $(document).on('ready', function(){
 												<tr>\
 													<th class="text-center">\
 														' + gamevalue.gameTitle + '\
-														<span id="' + gamevalue.gameKey + '" class="collapsable pull-right glyphicon glyphicon-chevron-down" aria-hidden="true"></span></th>\
+														<span id="' + gamevalue.gameKey + '" class="collapsable pull-right glyphicon glyphicon-chevron-right" aria-hidden="true"></span></th>\
 												</tr>\
 											</thead>\
-											<tbody class="' + gamevalue.gameKey + '"></tbody>\
+											<tbody class="' + gamevalue.gameKey + ' hide-on-load"></tbody>\
 										</table>');
 		$.each(gamevalue.streams, function(streamkey, streamvalue){
 			//Add the streamers to each table for each game
 			$('table#'+gamevalue.gameKey+' > tbody').append('\
-																	<tr>\
-																		<td class="class="text-center"">\
-																			<input class="hidden" type="checkbox" class="" id="' + streamkey + '" name="notification-setting" value="' + streamkey + '">\
-																			<label for="' + streamkey + '">' + streamkey + '</label>\
-																		</td>\
-																	</tr>');
+																<tr>\
+																	<td class="class="text-center"">\
+																		<input class="hidden" type="checkbox" class="" id="' + streamkey + '" name="notification-setting" value="' + streamkey + '">\
+																		<label for="' + streamkey + '">' + streamkey + '</label>\
+																	</td>\
+																</tr>');
 		});
 	});
 	
@@ -41,6 +41,13 @@ $(document).on('ready', function(){
 	//Checkbox check event
 
     $('input[type="checkbox"][name="notification-setting"]').on('change', function(){
-    	console.log($(this).val())
+    	var element = $(this);
+    	saveSetting(element.attr('name'), element.val());
     });
+
+    function saveSetting(setting, key)
+    {
+    	console.log(setting);
+    	console.log(key);
+    }
 });

@@ -15,6 +15,10 @@ table{
 	margin-bottom: 0px !important;
 }
 
+table > tbody.hide-on-load{
+	display: none;
+}
+
 /**
 *
 * Tabs/navigation Style
@@ -74,6 +78,11 @@ label{
 
 input + label{
 	background: #a73838;
+	color: #E6E6E6;
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 input:checked + label{
