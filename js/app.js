@@ -1,7 +1,6 @@
 var app = angular.module('MyTSM', ['ui.router', 'ngAnimate']);
 
 app.factory('streamStatusManager', streamStatusManager);
-//app.factory('redditManager', redditManager);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/games');
@@ -33,15 +32,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     });
 
-    // $stateProvider.state('page', {
-    //     url: '/page/:gameKey/:pageKey',
-    //     templateUrl: 'partials/page.html',
-    //     controller: function ($stateParams, $scope) {
-    //         $scope.game = Games[$stateParams.gameKey];
-    //         $scope.page = $stateParams.pageKey;
-    //     }
-    // });
-
     $stateProvider.state('reddit', {
         url: '/:gameKey/reddit',
         templateUrl: 'partials/reddit.html',
@@ -54,6 +44,5 @@ app.run(function($interval, streamStatusManager) {
 
     $interval(function () {
         streamStatusManager.refreshStatus();
-        console.log('test');
     }, 1000 * 40); // every 60 sec
 });

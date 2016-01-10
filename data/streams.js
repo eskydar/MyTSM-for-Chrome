@@ -3,8 +3,8 @@ var Games = {
         'gameKey': 'lol',
         'gameTitle': 'League of Legends',
         'streams': {
-            'Hauntzer': 'hauntzer',
-            'Svenskeren': 'officialsvenskeren',
+            'Hauntzer': 'TSM_hauntzer',
+            'Svenskeren': 'TSM_Svenskeren',
             'Bjergsen': 'TSM_Bjergsen',
             'Doublelift': 'tsm_doublelift',
             'Yellowstar': 'YellOwStaRR'
