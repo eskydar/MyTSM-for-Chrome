@@ -1,0 +1,19 @@
+<div class="table-responsive">
+<table ng-repeat="game in games" class="table table-hover" id="{{game.gameKey}}">
+	<thead>
+		<tr>
+			<th class="text-center" ng-click="collapseTable(game.gameKey)">
+				{{game.gameTitle}}
+			</th>
+		</tr>
+	</thead>
+	<tbody class="{{game.gameKey}} hidden">
+		<tr ng-repeat="(key, value) in game.streams">
+			<td class="text-center">
+				<input ng-click="saveNotificationSetting(key)" class="hidden" type="checkbox" id="{{key}}" name="notification-setting" value="{{key}}" ng-value="true" ng-model="data[key]"/>
+				<label for="{{key}}">{{key}}</label>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="MyTsmSettings">
+	<head>
+	  <meta charset="utf-8">
+		<meta name="description" content="TeamSoloMid Chrome extension">
+		<meta name="author" content="eskydar">
+		
+		<title>Team Solo Mid</title>
+
+		<link href="/vendor/animate-css/animate.min.css" rel="stylesheet" media="screen">
+        <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/css/options/options.css" rel="stylesheet" media="screen">
+
+        <base href="/src/">
+	</head>
+	
+	<body>
+		<header>
+			<img src="../img/logo-with-text-dark.png" />
+		</header>
+		<div class="container custom-container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="navbar">
+						<ul class="nav navbar-nav">
+							<li>
+								<a ui-sref="general()">Home</a>
+							</li>
+							<li>
+								<a ui-sref="notifications()">Notifications</a>
+							</li>
+						</ul>
+					</div>
+
+			        <div class="ui-view-container">
+			            <div ui-view>
+			            	
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+
+        <script src="/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/vendor/angular/angular.min.js"></script>
+        <script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+		<script src="/data/streams.js"></script>
+		<script src="/js/options/app.js"></script>
+		<script src="/js/options/controllers/notificationController.js"></script>
+	</body>
+</html>
