@@ -15,8 +15,33 @@ table{
 	margin-bottom: 0px !important;
 }
 
-table > tbody.hide-on-load{
-	display: none;
+table > thead {
+	cursor: pointer;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	-webkit-user-select: none; /* Chrome/Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+table > thead:hover {
+	background-color: #DEDEDE;
+}
+
+table > tbody{
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+tbody{
+	-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 /**
@@ -34,6 +59,43 @@ div.nav-center > ul.nav-main{
 	border-bottom: 6px solid #CCCCCC;
 }
 
+.navbar {
+	background: black;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.navbar ul.nav{
+	width: 100%;
+}
+
+.navbar ul.nav li {
+	width: 50%;
+	border-bottom: 2px solid black;
+}
+
+.navbar ul.nav li:hover{
+	border-bottom: 2px solid white;
+}
+
+.navbar ul.nav li a{
+	color: white;
+}
+
+.navbar ul.nav li a:hover{
+	background: black;
+	color: white;
+}
+
+.navbar ul.nav li a:focus{
+	background: black;
+	color: white;
+}
+
+
 /*div.nav-center > ul.nav-main > li{
 	display: inline;
 }*/
@@ -45,28 +107,6 @@ div.nav-center > ul.nav-main{
 
 .collapsable:hover{
 	color: #3c3c3c;
-}
-
-ul.nav-main > li > a{
-	border-radius: 0;
-	background: #262626;
-	border: 0;
-	float: left;
-	margin-right: 0;
-	color: white;
-	width: 150px;
-}
-
-ul.nav-main > li > a:hover, ul.nav-main > li > a:focus{
-	border: 0;
-	background: #3c3c3c;
-}
-
-ul.nav-main > li.active > a, ul.nav-main > li.active > a:hover, ul.nav-main > li.active > a:focus{
-	border: 0;
-	background: #3c3c3c;
-	cursor: pointer;
-	color: white;
 }
 
 label{
